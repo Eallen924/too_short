@@ -1,22 +1,12 @@
 <div class='container'>
-  
-  <div class='url_shorten'>
-    <form name='enter_url' action="/urls" method='post'>
-      
-      <h1>Too Short will make your shit shorter.</h1>
-      <img src="img/too_short.jpeg" alt="Too Short" height="281" width="179">
-      <div>
-        <label> URL:</label><input type='text' name='long_url' placeholder="Enter a url">
-      </div>
-      <div>
-        <input class="button" type='submit' value='Too Short!'>
-      </div><br>
-    </form>
-    <h2>Here is a list of your Too Shortened urls...</h2>
-     <ul>
-      <% @urls.each do |url| %>
-    <li> <%= url.long_url %>:  <%= url.short_url %> </li>
-  <% end %>
+
+ <%= erb :form %>
+
+ <h2>Here is a list of your Too $hortened urls...</h2>
+ <ul>
+    <% @urls.each do |url| %>
+        <li> <%= url.long_url %>:  <a href="<%= url.long_url %>"/> <%= url.short_url %> </li>
+    <% end %>
   </ul>
-  </div>
+
 </div>
