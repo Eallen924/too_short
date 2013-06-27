@@ -92,6 +92,7 @@ namespace :db do
     exec("createdb #{DB_NAME}")
   end
 
+
   desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping database #{DB_NAME}..."
@@ -116,12 +117,18 @@ namespace :db do
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
+  
+  # desc 'run db:drop && db:create && db:migrate'
+  # task :yolo => [:drop, :create, :migrate] do
+  #   puts "setup complete."
+  # end
 end
 
 desc 'Start IRB with application environment loaded'
 task "console" do
   exec "irb -r./config/environment"
 end
+
 
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:spec)
