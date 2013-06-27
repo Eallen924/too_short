@@ -5,7 +5,7 @@
  <h2>Here is a list of your Too $hortened urls...</h2>
  <ul>
     <% @urls.each do |url| %>
-        <li> <%= url.long_url %>:  <a href="<%= url.long_url %>"/> <%= url.short_url %> </li>
+        <li> <%= url.long_url %>:  <a href="<%= url.long_url %>"><%= url.short_url %></a></li>
     <% end %>
   </ul>
 
